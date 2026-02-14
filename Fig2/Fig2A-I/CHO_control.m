@@ -161,11 +161,11 @@ function CHO_box(num,match1,match2,colors,lgdText,dat,hm)
     % high quality output of open figure
     iptsetpref('ImshowBorder','tight');
     set(gcf, 'Position', get(0, 'Screensize'));
-    export_fig hold.tif -m2.5 -q101;
-    if hm > 0
-        copyfile('hold.tif',[str1,'_mainTHT.tif']);
-    else
-        copyfile('hold.tif',[str1,'_controlTHT.tif']);
-    end
+    % export_fig hold.tif -m2.5 -q101;
+    % if hm > 0
+    %     copyfile('hold.tif',[str1,'_mainTHT.tif']);
+    % else
+    %     copyfile('hold.tif',[str1,'_controlTHT.tif']);
+    % end
 
 end

@@ -102,8 +102,8 @@ function [xFitted,yFitted,coefficients] = CHO_scatter(num,match1,match2,colors,l
     iptsetpref('ImshowBorder','tight');
     %set(gcf, 'Position', get(0, 'Screensize'));
     set(gcf,'Position',[0 174 1550 375])
-    export_fig hold.tif -m2.5 -q101;
+    %export_fig hold.tif -m2.5 -q101;
     
-    copyfile('hold.tif',[str1+howmany+'_scatter.tif']);
+    %copyfile('hold.tif',[str1+howmany+'_scatter.tif']);
 
 end

@@ -109,8 +109,8 @@ function CHO_box(num,match1,match2,colors,lgdText,dat,hm,small)
 
     % high quality output of open figure
     iptsetpref('ImshowBorder','tight');
-    export_fig hold.tif -m2.5 -q101;
-    copyfile('hold.tif',[str1,'_boxBIO.tif']);
+    %export_fig hold.tif -m2.5 -q101;
+    %copyfile('hold.tif',[str1,'_boxBIO.tif']);
     
     % Make boxplots ThT
     figure
@@ -177,11 +177,11 @@ function CHO_box(num,match1,match2,colors,lgdText,dat,hm,small)
     % high quality output of open figure
     %ylim([0 2])
     iptsetpref('ImshowBorder','tight');
-    export_fig hold.tif -m2.5 -q101;
-    if small == 1
-        copyfile('hold.tif',[str1,'_smallboxTHT.tif']);
-    else
-        copyfile('hold.tif',[str1,'_boxTHT.tif']);
-    end
+    % export_fig hold.tif -m2.5 -q101;
+    % if small == 1
+    %     copyfile('hold.tif',[str1,'_smallboxTHT.tif']);
+    % else
+    %     copyfile('hold.tif',[str1,'_boxTHT.tif']);
+    % end
 
 end
