@@ -15,7 +15,6 @@ function CHO_box(num,match1,match2,colors,lgdText,dat,hm,small)
             3 1;...
             4 1;...
             5 1;...
-            6 1;...
             7 1;...
             8 1];
     end
@@ -30,7 +29,12 @@ function CHO_box(num,match1,match2,colors,lgdText,dat,hm,small)
             else
                 normCheck = (dat{num}(2,match1(c):match2(c)))';
             end
-            [h(k),p(k)] = adtest(normCheck);
+            % Adtest can only be used on n>3
+            if size(normCheck,1)>3
+                [h(k),p(k)] = adtest(normCheck);
+            else
+                h(k) = 0;
+            end
             k=k+1;
         end
     end
@@ -109,8 +113,8 @@ function CHO_box(num,match1,match2,colors,lgdText,dat,hm,small)
 
     % high quality output of open figure
     iptsetpref('ImshowBorder','tight');
-    %export_fig hold.tif -m2.5 -q101;
-    %copyfile('hold.tif',[str1,'_boxBIO.tif']);
+    % export_fig hold.tif -m2.5 -q101;
+    % copyfile('hold.tif',[str1,'_boxBIO.tif']);
     
     % Make boxplots ThT
     figure
@@ -139,7 +143,7 @@ function CHO_box(num,match1,match2,colors,lgdText,dat,hm,small)
         ylim([0 90])
         yticks([1 25 50 75 100])
         yHigh = 1.5;
-        mult = 140;
+        mult = 185;
         set(gcf,'Position',[6 67 1550/4 325])
         set(findall(gcf,'-property','FontSize'),'FontSize',29)
     elseif hm == 2
@@ -176,7 +180,7 @@ function CHO_box(num,match1,match2,colors,lgdText,dat,hm,small)
 
     % high quality output of open figure
     %ylim([0 2])
-    iptsetpref('ImshowBorder','tight');
+    % iptsetpref('ImshowBorder','tight');
     % export_fig hold.tif -m2.5 -q101;
     % if small == 1
     %     copyfile('hold.tif',[str1,'_smallboxTHT.tif']);
